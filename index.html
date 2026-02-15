@@ -3,23 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Compressed CSS -->
+    <!-- Foundation CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
     <!-- Compressed JavaScript -->
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js"
       crossorigin="anonymous"
+      defer
     ></script>
+
+    <link rel="stylesheet" href="style.css" />
 
     <title>D1 Landing Page</title>
   </head>
@@ -30,6 +32,7 @@
       </div>
       <nav class="grid-x grid-padding-x align-justify nav">
         <div class="left-align flex-container align-center align-middle">
+          <!--Used to activate/deactivate the sidebar navigation-->
           <input type="checkbox" id="sidebar-active" />
           <!--Menu icon-->
           <label for="sidebar-active" class="open-sidebar-button">
@@ -104,6 +107,8 @@
             </a>
           </div>
         </div>
+
+        <!--Get Started Button & Cart Icon-->
         <div class="right-align flex-container align-center align-middle">
           <button type="button">Get Started</button>
           <input type="checkbox" id="cart-active" />
@@ -138,15 +143,20 @@
     </header>
 
     <main class="row">
+      <!--Hero Section-->
       <section class="section-one" id="hero">
-        <div class="wrapper grid-x align-middle align-justify">
+        <div class="wrapper grid-x grid-margin-y align-middle align-justify">
           <div class="cell grid-x small-12 large-7 align-justify">
+            <!--Heading-->
             <div class="title small-12">
               <h1>Skincare for Guys That Aren't Into Skincare</h1>
               <p>Try the one minute skincare routine</p>
               <button type="button">Try Today!</button>
             </div>
+
+            <!--Testimonial-->
             <div class="ratings small-12 grid-margin-y">
+              <!--Star icons-->
               <svg
                 width="116px"
                 height="18px"
@@ -155,7 +165,6 @@
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
-                <title>Combined Shape Copy</title>
                 <g
                   id="Page-1"
                   stroke="none"
@@ -186,12 +195,15 @@
               </div>
             </div>
           </div>
+
+          <!--Product image-->
           <div class="cell small-12 large-5 text-center product-image">
             <img src="./assets/Group 18.png" alt="Skincare products" />
           </div>
         </div>
       </section>
 
+      <!--2nd Section-->
       <section class="section-two" id="section2">
         <div class="wrapper grid-y">
           <div
@@ -204,6 +216,7 @@
           </div>
 
           <div class="details grid-x align-middle align-justify">
+            <!--Heading-->
             <div
               class="left-align cell small-12 large-7 cell grid-x align-middle"
             >
@@ -223,6 +236,8 @@
                 <li>Everything you need, nothing you don't</li>
               </ul>
             </div>
+
+            <!--Product image-->
             <div
               class="right-align cell small-12 large-5 text-center product-image"
             >
@@ -230,6 +245,7 @@
             </div>
           </div>
 
+          <!--3 column benefits section-->
           <div
             class="benefits grid-x grid-padding-x grid-margin-y align-middle align-justify"
           >
@@ -255,14 +271,17 @@
         </div>
       </section>
 
+      <!--3rd Section-->
       <section class="section-three" id="section3">
         <div class="wrapper">
+          <!--Heading-->
           <div class="details grid-y text-center align-middle align-center">
             <p>Here's how D1 works</p>
             <img src="./assets/clock.svg" alt="Clock" />
             <h2>Just 1 Minute A Day</h2>
           </div>
 
+          <!--3 column step-by-step guide-->
           <div class="directions grid-x align-spaced">
             <div
               class="cell small-12 large-4 grid-y align-justify grid-margin-x grid-padding-x"
@@ -307,7 +326,9 @@
         </div>
       </section>
 
+      <!--4th Section-->
       <section class="section-four" id="section4">
+        <!--Heading-->
         <div class="wrapper">
           <div class="details grid-y text-center align-middle align-center">
             <h2>Results You Can See</h2>
@@ -322,6 +343,8 @@
             </p>
           </div>
         </div>
+
+        <!--Full width image with overlay text-->
         <div class="image-wrapper">
           <div class="overlay-text">
             <h2>"The one minute routine that will save your face"</h2>
@@ -331,6 +354,8 @@
             alt="Man doing skincare routine"
           />
         </div>
+
+        <!--Automatic sliding carousel-->
         <div class="carousel grid-x">
           <ul
             class="list-carousel grid-x grid-padding-y align-middle align-justify"
@@ -343,12 +368,16 @@
         </div>
       </section>
 
+      <!--5th Section-->
       <section class="section-five" id="section5">
         <div class="wrapper">
+          <!--Heading-->
           <div class="details grid-y grid-padding-y align-justify">
-            <h2>Daily Benefits. Long-term Results</h2>
+            <h2>Daily Benefits.<br />Long-term Results</h2>
             <p>We started D1 because...</p>
           </div>
+
+          <!--Three-Column items-->
           <div class="results grid-x grid-padding-x align-justify">
             <div
               class="cell small-12 large-4 grid-y align-justify grid-margin-x grid-padding-x"
@@ -384,13 +413,17 @@
         </div>
       </section>
 
+      <!--6th Section-->
       <section class="section-six" id="section6">
         <div class="wrapper">
           <div class="details grid-x align-middle align-justify">
+            <!--Heading-->
             <div
               class="left-align cell small-12 large-6 cell grid-y align-justify"
             >
-              <div class="yellow-strip grid-x align-middle align-center">
+              <div
+                class="yellow-strip text-center grid-x align-middle align-center"
+              >
                 <p>Start your 1 minute routine</p>
               </div>
               <h2>Get the set</h2>
@@ -412,6 +445,8 @@
                 Add to Cart — $58.99 <span>$10.99</span>
               </button>
             </div>
+
+            <!--Product image-->
             <div
               class="right-align cell small-12 large-6 text-center product-image"
             >
@@ -421,14 +456,17 @@
         </div>
       </section>
 
+      <!--7th Section-->
       <section class="section-seven" id="section7">
         <div class="wrapper">
+          <!--Heading-->
           <div class="details grid-y align-justify">
             <h2>Best-In-Class Ingredients That Work</h2>
-            <p>Full ingredient list</p>
+            <p class="text-center">Full ingredient list</p>
           </div>
 
-          <div class="ingredients">
+          <!--Ingredients Grid layout-->
+          <div class="ingredients grid-x grid-container fluid">
             <div class="grid-x grid-padding-x align-middle">
               <div class="image-wrapper">
                 <img src="./assets/Bitmap-3.jpg" alt="Hyaluronic Acid" />
@@ -487,8 +525,10 @@
         </div>
       </section>
 
+      <!--8th Section-->
       <section class="section-eight" id="section8">
         <div class="wrapper grid-y grid-margin-y grid-padding-y">
+          <!--Heading-->
           <div
             class="details grid-y grid-padding-y grid-margin-y text-center align-middle"
           >
@@ -496,7 +536,11 @@
             <h2>Three Perfect Formulas</h2>
             <p>A <span>game changer</span> for your skin</p>
           </div>
-          <div class="products-wrapper">
+
+          <!--Vertical product layout-->
+          <div
+            class="products-wrapper grid-y grid-margin-y grid-padding-y align-spaced"
+          >
             <div
               class="products grid-x grid-padding-x grid-margin-y align-middle align-spaced"
             >
@@ -553,6 +597,7 @@
             </div>
           </div>
 
+          <!--Three-Column Testimonials-->
           <div
             class="testimonials-wrapper grid-y grid-margin-y grid-padding-y align-middle"
           >
@@ -625,10 +670,13 @@
         </div>
       </section>
 
+      <!--9th Section-->
       <section class="section-nine" id="section9">
         <div class="wrapper grid-y grid-padding-y grid-margin-y align-middle">
+          <!--Heading-->
           <h2>What Our Fans Say</h2>
 
+          <!--Four-Column Videos layout-->
           <div
             class="grid-x grid-padding-x grid-margin-x grid-margin-y grid-padding-y align-spaced"
           >
@@ -648,9 +696,11 @@
         </div>
       </section>
 
+      <!--10th Section-->
       <section class="section-ten" id="section10">
         <div class="wrapper">
           <div class="details grid-x align-middle align-justify">
+            <!--Heading-->
             <div
               class="left-align cell small-12 large-6 cell grid-y align-justify"
             >
@@ -672,6 +722,8 @@
                 Add to Cart — $58.99
               </button>
             </div>
+
+            <!--Product image-->
             <div
               class="right-align cell small-12 large-6 text-center product-image"
             >
@@ -681,6 +733,8 @@
         </div>
       </section>
     </main>
+
+    <!--Footer-->
     <footer class="row">
       <div class="wrapper grid-y grid-padding-y grid-margin-y align-justify">
         <div
@@ -694,6 +748,8 @@
             <img src="./assets/Combined Shape-4.svg" alt="" />
           </div>
         </div>
+
+        <!--Input field for email-->
         <form class="form-group">
           <div class="input-wrapper grid-x grid-margin-x grid-padding-x">
             <input
@@ -705,6 +761,8 @@
             <button type="submit">Submit</button>
           </div>
         </form>
+
+        <!--Social icons-->
         <ul class="socials grid-x grid-padding-x align-left">
           <li>
             <a class="grid-x align-center align-middle" href="#"
@@ -723,6 +781,7 @@
           </li>
         </ul>
 
+        <!--Footer links-->
         <div
           class="footer-links grid-x grid-padding-x grid-margin-x grid-margin-y"
         >
@@ -746,6 +805,8 @@
             </ul>
           </div>
         </div>
+
+        <!--Copyright & Disclaimer-->
         <div
           class="copyright grid-x grid-padding-x grid-margin-x align-bottom align-justify"
         >

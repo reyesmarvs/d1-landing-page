@@ -11,12 +11,14 @@
   border-radius: 40px;
 }
 
+/*Sets max-width to every section*/
 @mixin wrapper {
   margin: 0 auto;
   max-width: 2400px;
   padding: 3em clamp(2em, 3vw, 5em);
 }
 
+/*Sets default font styles for heading*/
 @mixin heading-style {
   font-weight: 900;
   text-transform: uppercase;
@@ -24,6 +26,7 @@
   font-size: clamp(2rem, 5vw, 6rem);
 }
 
+/*Sets custom bullet style for unordered list*/
 @mixin bullet-style {
   list-style-type: none;
   border-top: 1px solid #dbdbdb;
@@ -88,6 +91,7 @@ header {
   position: fixed;
   z-index: 10;
   width: 100%;
+
   .free-shipping {
     background-color: $accent-color;
     font-family: $paragraph-font;
@@ -97,14 +101,18 @@ header {
       @include yellow-bg;
       margin: 0;
       font-weight: 500;
+      text-wrap: balance;
     }
   }
 
   nav {
     height: 80px;
     background-color: $light-color;
+    padding: 0 clamp(0rem, 1vw, 1rem);
 
+    /*Style for navigation links*/
     .left-align {
+      /*Removes the default input checkbox*/
       input,
       #sidebar-active {
         display: none;
@@ -144,12 +152,14 @@ header {
         }
       }
 
+      /*Sets the starting height of menu below the nav*/
       #sidebar-active:checked ~ .menu {
         left: 0;
         top: 106px;
         height: 100%;
       }
 
+      /*Changes menu icon if navigation is opened or closed*/
       #sidebar-active:checked ~ .close-sidebar-button {
         display: block;
         padding: 12px;
@@ -160,20 +170,23 @@ header {
         display: none;
       }
 
+      /*Background overlay when navigation menu is open*/
       #sidebar-active:checked ~ #overlay {
         background-color: rgba(0, 0, 0, 0.55);
         height: 100%;
         width: 100%;
         position: fixed;
-        top: 110px;
+        top: 106px;
         left: 0;
       }
     }
 
+    /*Style for button & cart icon*/
     .right-align {
       position: relative;
       button {
         @include button-style;
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
         padding: 1em clamp(1rem, 2vw, 3em);
         background-color: $dark-color;
         color: $light-color;
@@ -185,12 +198,13 @@ header {
         margin-right: 0.3em;
         cursor: pointer;
         width: 30px;
-        margin: 0 2em;
+        margin: 0 1.5em;
         svg {
           fill: $dark-color;
         }
       }
 
+      /*Removes the default input checkbox*/
       #cart-active {
         display: none;
       }
@@ -204,9 +218,10 @@ header {
         position: absolute;
         font-size: 0.8rem;
         top: 10px;
-        right: 14px;
+        right: 10px;
       }
 
+      /*Shopping cart*/
       .cart-tab {
         display: grid;
         grid-template-rows: 70px 1fr 70px;
@@ -214,7 +229,8 @@ header {
         top: 0;
         right: -100%;
         z-index: 10;
-        width: 400px;
+        width: 100%;
+        max-width: 400px;
         height: 100%;
         background-color: $primary-color;
         color: $light-color;
@@ -234,8 +250,8 @@ header {
             cursor: pointer;
 
             svg {
-                fill: $dark-color;
-              }
+              fill: $dark-color;
+            }
           }
 
           h2 {
@@ -271,6 +287,7 @@ header {
         }
       }
 
+      /*Displays the shopping cart when icon is clicked*/
       #cart-active:checked ~ .cart-tab {
         right: 0;
       }
@@ -294,22 +311,34 @@ main {
     .wrapper {
       @include wrapper;
 
-      div {
+      > div {
         text-transform: uppercase;
-        gap: clamp(2rem, 8vw, 10rem);
+        gap: clamp(4rem, 8vw, 10rem);
 
         .title {
           margin-bottom: auto;
           h1 {
             @include heading-style;
             color: $light-color;
-            letter-spacing: -2px;
             line-height: 0.9;
           }
 
           button {
             @include yellow-bg;
             @include button-style;
+          }
+        }
+
+        .ratings {
+          p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            max-width: 500px;
+          }
+          .profile {
+            img {
+              width: 100%;
+              max-width: 40px;
+            }
           }
         }
       }
@@ -516,7 +545,6 @@ main {
           @include heading-style;
           font-size: clamp(2rem, 5vw, 3rem);
           line-height: 1;
-          text-wrap: balance;
           max-width: 800px;
         }
       }
@@ -588,6 +616,11 @@ main {
             cursor: pointer;
             max-width: 360px;
 
+            &:hover {
+              background-color: $accent-color;
+              color: $dark-color;
+            }
+
             span {
               text-decoration: line-through;
               color: #5f5f5f;
@@ -621,7 +654,7 @@ main {
 
       .ingredients {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
         gap: 2em;
 
         & > div {
@@ -811,6 +844,11 @@ main {
             cursor: pointer;
             max-width: 360px;
 
+            &:hover {
+              background-color: $accent-color;
+              color: $dark-color;
+            }
+
             span {
               text-decoration: line-through;
               color: #5f5f5f;
@@ -871,6 +909,11 @@ footer {
         right: 10px;
         top: 10px;
         cursor: pointer;
+
+        &:hover {
+          background-color: $accent-color;
+          color: $dark-color;
+        }
       }
     }
 
@@ -890,7 +933,7 @@ footer {
           height: 50px;
 
           &:hover {
-            color: $light-color;
+            color: $accent-color;
             border-color: $accent-color;
           }
         }
@@ -922,19 +965,6 @@ footer {
         border: 1px solid #5f5f5f;
         border-radius: 30px;
         padding: 1.5em;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 720px) {
-  main {
-    .section-seven {
-      .wrapper {
-        .ingredients {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
       }
     }
   }

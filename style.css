@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+/*Sets max-width to every section*/
+/*Sets default font styles for heading*/
+/*Sets custom bullet style for unordered list*/
 /* Utility classes to reverse flex direction on Foundation grids */
 .grid-x.row-reverse {
   flex-direction: row-reverse;
@@ -50,10 +53,16 @@ header .free-shipping p {
   color: #292a35;
   margin: 0;
   font-weight: 500;
+  text-wrap: balance;
 }
 header nav {
   height: 80px;
   background-color: #ffffff;
+  padding: 0 clamp(0rem, 1vw, 1rem);
+  /*Style for navigation links*/
+}
+header nav .left-align {
+  /*Removes the default input checkbox*/
 }
 header nav .left-align input,
 header nav .left-align #sidebar-active {
@@ -88,10 +97,16 @@ header nav .left-align .menu a {
 header nav .left-align .menu a:hover {
   background-color: #ffba00;
 }
+header nav .left-align {
+  /*Sets the starting height of menu below the nav*/
+}
 header nav .left-align #sidebar-active:checked ~ .menu {
   left: 0;
   top: 106px;
   height: 100%;
+}
+header nav .left-align {
+  /*Changes menu icon if navigation is opened or closed*/
 }
 header nav .left-align #sidebar-active:checked ~ .close-sidebar-button {
   display: block;
@@ -101,13 +116,19 @@ header nav .left-align #sidebar-active:checked ~ .close-sidebar-button {
 header nav .left-align #sidebar-active:checked ~ .open-sidebar-button {
   display: none;
 }
+header nav .left-align {
+  /*Background overlay when navigation menu is open*/
+}
 header nav .left-align #sidebar-active:checked ~ #overlay {
   background-color: rgba(0, 0, 0, 0.55);
   height: 100%;
   width: 100%;
   position: fixed;
-  top: 110px;
+  top: 106px;
   left: 0;
+}
+header nav {
+  /*Style for button & cart icon*/
 }
 header nav .right-align {
   position: relative;
@@ -115,6 +136,7 @@ header nav .right-align {
 header nav .right-align button {
   padding: 1em 3em;
   border-radius: 40px;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
   padding: 1em clamp(1rem, 2vw, 3em);
   background-color: #292a35;
   color: #ffffff;
@@ -125,10 +147,13 @@ header nav .right-align .open-cart-button {
   margin-right: 0.3em;
   cursor: pointer;
   width: 30px;
-  margin: 0 2em;
+  margin: 0 1.5em;
 }
 header nav .right-align .open-cart-button svg {
   fill: #292a35;
+}
+header nav .right-align {
+  /*Removes the default input checkbox*/
 }
 header nav .right-align #cart-active {
   display: none;
@@ -142,7 +167,10 @@ header nav .right-align .cart-count {
   position: absolute;
   font-size: 0.8rem;
   top: 10px;
-  right: 14px;
+  right: 10px;
+}
+header nav .right-align {
+  /*Shopping cart*/
 }
 header nav .right-align .cart-tab {
   display: grid;
@@ -151,7 +179,8 @@ header nav .right-align .cart-tab {
   top: 0;
   right: -100%;
   z-index: 10;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 100%;
   background-color: #eff7fa;
   color: #ffffff;
@@ -201,6 +230,9 @@ header nav .right-align .cart-tab .cart-buttons .btn {
 header nav .right-align .cart-tab .cart-buttons .close-cart {
   background-color: #ffffff;
 }
+header nav .right-align {
+  /*Displays the shopping cart when icon is clicked*/
+}
 header nav .right-align #cart-active:checked ~ .cart-tab {
   right: 0;
 }
@@ -218,28 +250,35 @@ main .section-one .wrapper {
   max-width: 2400px;
   padding: 3em clamp(2em, 3vw, 5em);
 }
-main .section-one .wrapper div {
+main .section-one .wrapper > div {
   text-transform: uppercase;
-  gap: clamp(2rem, 8vw, 10rem);
+  gap: clamp(4rem, 8vw, 10rem);
 }
-main .section-one .wrapper div .title {
+main .section-one .wrapper > div .title {
   margin-bottom: auto;
 }
-main .section-one .wrapper div .title h1 {
+main .section-one .wrapper > div .title h1 {
   font-weight: 900;
   text-transform: uppercase;
   font-family: "Inter", sans-serif;
   font-size: clamp(2rem, 5vw, 6rem);
   color: #ffffff;
-  letter-spacing: -2px;
   line-height: 0.9;
 }
-main .section-one .wrapper div .title button {
+main .section-one .wrapper > div .title button {
   background-color: #ffba00;
   text-transform: uppercase;
   color: #292a35;
   padding: 1em 3em;
   border-radius: 40px;
+}
+main .section-one .wrapper > div .ratings p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  max-width: 500px;
+}
+main .section-one .wrapper > div .ratings .profile img {
+  width: 100%;
+  max-width: 40px;
 }
 main .section-two .wrapper {
   margin: 0 auto;
@@ -442,7 +481,6 @@ main .section-five .wrapper .details h2 {
   font-size: clamp(2rem, 5vw, 6rem);
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1;
-  text-wrap: balance;
   max-width: 800px;
 }
 main .section-five .wrapper .results {
@@ -532,6 +570,10 @@ main .section-six .wrapper .details .left-align button {
   cursor: pointer;
   max-width: 360px;
 }
+main .section-six .wrapper .details .left-align button:hover {
+  background-color: #ffba00;
+  color: #292a35;
+}
 main .section-six .wrapper .details .left-align button span {
   text-decoration: line-through;
   color: #5f5f5f;
@@ -563,7 +605,7 @@ main .section-seven .wrapper .details p {
 }
 main .section-seven .wrapper .ingredients {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
   gap: 2em;
 }
 main .section-seven .wrapper .ingredients > div {
@@ -750,6 +792,10 @@ main .section-ten .wrapper .details .left-align button {
   cursor: pointer;
   max-width: 360px;
 }
+main .section-ten .wrapper .details .left-align button:hover {
+  background-color: #ffba00;
+  color: #292a35;
+}
 main .section-ten .wrapper .details .left-align button span {
   text-decoration: line-through;
   color: #5f5f5f;
@@ -799,6 +845,10 @@ footer .wrapper form button {
   top: 10px;
   cursor: pointer;
 }
+footer .wrapper form button:hover {
+  background-color: #ffba00;
+  color: #292a35;
+}
 footer .wrapper .socials {
   list-style-type: none;
   gap: 1em;
@@ -814,7 +864,7 @@ footer .wrapper .socials li a {
   height: 50px;
 }
 footer .wrapper .socials li a:hover {
-  color: #ffffff;
+  color: #ffba00;
   border-color: #ffba00;
 }
 footer .wrapper .footer-links {
@@ -839,11 +889,4 @@ footer .wrapper .copyright p:nth-child(2) {
   border: 1px solid #5f5f5f;
   border-radius: 30px;
   padding: 1.5em;
-}
-
-@media screen and (max-width: 720px) {
-  main .section-seven .wrapper .ingredients {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
 }/*# sourceMappingURL=style.css.map */
