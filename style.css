@@ -260,6 +260,7 @@ main .section-one .wrapper > div {
 }
 main .section-one .wrapper > div .title {
   margin-bottom: auto;
+  max-width: 1030px;
 }
 main .section-one .wrapper > div .title h1 {
   font-weight: 900;
